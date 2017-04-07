@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="massText">Mass</string>
+    <string name="heightText">Height</string>
+    <string name="buttonText">Calculate</string>
+    <string name="resultText">20.2</string>
+    <string name="LbInText">Lb/In</string>
+    <string name="KgMText">Kg/M</string>
+    <string name="toastErrorText">Podane wartości są nieprawidłowe</string>
+    <string name="starvation">Twoja wartość bmi wskazuje na wygłodzenie, niezwłocznie skonsultuj się z lekarzem</string>
+    <string name="emaciation">Twoja wartość bmi wskazuje na wychudzenie, niezwłocznie skonsultuj się z lekarzem</string>
+    <string name="underweight">Twoja wartość bmi wskazuje na niedowagę, postaraj się przybrać na wadze</string>
+    <string name="normalValue">Twoja wartość bmi jest prawidłowa</string>
+    <string name="overweight">Twoja wartość bmi wskazuje na nadwagę, postaraj się zrzucić parę kilogramów</string>
+    <string name="secondDegreeOverweight">Twoja wartość bmi wskazuje na drugi stopień otyłości (otyłość kliniczna), niezwłocznie skonsultuj się z lekarzem</string>
+    <string name="thirdDegreeOverweight">Twoja wartość bmi wskazuje na trzeci stopień otyłości (otyłość skrajna), niezwłocznie skonsultuj się z lekarzem</string>
+    <string name="firstDegreeOverweight">Twoja wartość bmi wskazuje na pierwszy stopień otyłości, musisz skonsultować się z lekarzem</string>
+    <string name="title_activity_author">AuthorActivity</string>
+    <string name="authorName">Grzegorz Stala</string>
+    <string name="toastSaveText">Dane zostały zapisane</string>
+    <string name="toastSaveError">Nie wprowadzono wszystkich danych</string>
+    <string name="saveText">Save</string>
+    <string name="shareText">Share</string>
+    <string name="authorText">Author</string>
+    <string name="aboutAuthor">Wroclaw University of Science and Technology</string>
+</resources>
