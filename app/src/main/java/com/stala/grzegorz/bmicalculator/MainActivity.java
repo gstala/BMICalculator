@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.LbInRadioButton)
     RadioButton lbInButton;
 
+    public static final String MASS_KEY = "mass";
+    public static final String HEIGHT_KEY = "height";
+
     private ICountBmi countBmiForKgM;
     private ICountBmi countBmiForLbIn;
 
@@ -54,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private void saveData() {
         SharedPreferences.Editor editor = sharedPref.edit();
         if (!String.valueOf(massEditText.getText()).equals("") && !String.valueOf(heightEditText.getText()).equals("")) {
-            editor.putString("mass", String.valueOf(massEditText.getText()));
-            editor.putString("height", String.valueOf(heightEditText.getText()));
+            editor.putString(MASS_KEY, String.valueOf(massEditText.getText()));
+            editor.putString(HEIGHT_KEY, String.valueOf(heightEditText.getText()));
             editor.apply();
             Toast.makeText(getApplicationContext(), R.string.toastSaveText, Toast.LENGTH_SHORT).show();
         }
@@ -63,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readData() {
-        String mass = sharedPref.getString("mass", "");
-        String height = sharedPref.getString("height", "");
+        String mass = sharedPref.getString(MASS_KEY, "");
+        String height = sharedPref.getString(HEIGHT_KEY, "");
         massEditText.setText(mass);
         heightEditText.setText(height);
     }
@@ -141,28 +144,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdvice(float bmi) {
-        if (bmi < 16) {
+        if (bmi < ICountBmi.BMI_POINTER_1) {
             adviceTextView.setText(R.string.starvation);
             setColors(R.color.bloody);
-        } else if (bmi >= 16 && bmi < 17) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_1 && bmi < ICountBmi.BMI_POINTER_2) {
             adviceTextView.setText(R.string.emaciation);
             setColors(R.color.red);
-        } else if (bmi >= 17 && bmi < 18.5) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_2 && bmi < ICountBmi.BMI_POINTER_3) {
             adviceTextView.setText(R.string.underweight);
             setColors(R.color.orange);
-        } else if (bmi >= 18.5 && bmi < 25) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_3 && bmi < ICountBmi.BMI_POINTER_4) {
             adviceTextView.setText(R.string.normalValue);
             setColors(R.color.light_green);
-        } else if (bmi >= 25 && bmi < 30) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_4 && bmi < ICountBmi.BMI_POINTER_5) {
             adviceTextView.setText(R.string.overweight);
             setColors(R.color.yellow);
-        } else if (bmi >= 30 && bmi < 35) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_5 && bmi < ICountBmi.BMI_POINTER_6) {
             adviceTextView.setText(R.string.firstDegreeOverweight);
             setColors(R.color.orange);
-        } else if (bmi >= 35 && bmi < 40) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_6 && bmi < ICountBmi.BMI_POINTER_7) {
             adviceTextView.setText(R.string.secondDegreeOverweight);
             setColors(R.color.red);
-        } else if (bmi >= 40) {
+        } else if (bmi >= ICountBmi.BMI_POINTER_7) {
             adviceTextView.setText(R.string.thirdDegreeOverweight);
             setColors(R.color.bloody);
         }
